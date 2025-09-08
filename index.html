@@ -3,19 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Lãnh Minh Hiếu</title>
+    <title>🎉 Happy Birthday Thùy 🎂</title>
     <style>
+        /* ==== NỀN LED GRADIENT ĐỘNG ==== */
+        
         body {
             margin: 0;
-            height: 100vh;
             overflow: hidden;
-            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            font-family: "Comic Sans MS", cursive, sans-serif;
+            background: linear-gradient(270deg, #ff0080, #00f7ff, #ffcc00, #00ff99, #9900ff);
+            background-size: 1200% 1200%;
+            animation: gradientBG 25s ease infinite;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
         }
         
-        @keyframes gradient {
+        @keyframes gradientBG {
             0% {
                 background-position: 0% 50%;
             }
@@ -26,91 +28,117 @@
                 background-position: 0% 50%;
             }
         }
-        /* Khối chữ nằm chính giữa */
-        
-        .center-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 20;
-            /* Đặt cao nhất */
-        }
+        /* ==== TIÊU ĐỀ CHÍNH ==== */
         
         h1 {
-            font-size: 50px;
+            font-size: 60px;
             color: #fff;
-            text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 40px #ff0080;
-            animation: glow 2s ease-in-out infinite alternate;
-            margin: 0;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #00f7ff, 0 0 40px #ffcc00, 0 0 60px #ff00ff;
+            position: relative;
+            z-index: 10;
+            margin-top: 5vh;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #fff;
+            width: 0;
         }
         
         h2 {
-            font-size: 28px;
+            font-size: 30px;
             color: #fff;
-            text-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
-            margin-top: 15px;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #00f7ff, 0 0 40px #ffcc00, 0 0 60px #ff00ff;
+            position: relative;
+            z-index: 10;
+            margin-top: 5vh;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #fff;
+            width: 0;
+        }
+        
+        h1 {
+            animation: typing1 6s steps(40, end) infinite, glow 2s ease-in-out infinite alternate;
+        }
+        
+        h2 {
+            animation: typing2 6s steps(40, end) infinite, glow 2s ease-in-out infinite alternate;
+            animation-delay: 3s, 0s;
+            /* chạy sau h1 */
+        }
+        
+        @keyframes typing1 {
+            0% {
+                width: 0
+            }
+            40% {
+                width: 100%
+            }
+            60% {
+                width: 100%
+            }
+            70%,
+            71%,
+            73%,
+            75%,
+            77% {
+                opacity: 0
+            }
+            72%,
+            74%,
+            76%,
+            78%,
+            79% {
+                opacity: 1
+            }
+            90% {
+                width: 100%
+            }
+            100% {
+                width: 0
+            }
+        }
+        
+        @keyframes typing2 {
+            0% {
+                width: 0
+            }
+            40% {
+                width: 100%
+            }
+            60% {
+                width: 100%
+            }
+            70%,
+            71%,
+            73%,
+            75%,
+            77% {
+                opacity: 0
+            }
+            72%,
+            74%,
+            76%,
+            78%,
+            79% {
+                opacity: 1
+            }
+            90% {
+                width: 100%
+            }
+            100% {
+                width: 0
+            }
         }
         
         @keyframes glow {
             from {
-                text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080;
+                text-shadow: 0 0 10px #00f7ff, 0 0 20px #ff00ff;
             }
             to {
-                text-shadow: 0 0 20px #ff0080, 0 0 40px #ff0080, 0 0 60px #ff0080;
+                text-shadow: 0 0 20px #ff00ff, 0 0 30px #00f7ff;
             }
         }
-        /* Confetti */
-        
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            top: -10px;
-            opacity: 0.8;
-            animation: fall linear forwards;
-            z-index: 5;
-        }
-        
-        @keyframes fall {
-            to {
-                transform: translateY(110vh) rotate(720deg);
-            }
-        }
-        /* Balloons */
-        
-        .balloon {
-            position: absolute;
-            width: 40px;
-            height: 55px;
-            border-radius: 50% 50% 50% 50%;
-            animation: float 6s ease-in-out infinite;
-            z-index: 5;
-        }
-        
-        .balloon::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            width: 2px;
-            height: 30px;
-            background: #fff;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-50px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-        /* Fireworks */
+        /* ==== CANVAS ==== */
         
         canvas {
             position: absolute;
@@ -118,115 +146,195 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
             z-index: 1;
-            /* Luôn nằm dưới chữ */
+            pointer-events: none;
+        }
+        /* ==== BÓNG BAY ==== */
+        
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 60px;
+            height: 80px;
+            border-radius: 50%;
+            animation: floatUp 12s infinite ease-in;
+            z-index: 5;
+        }
+        
+        .balloon.heart {
+            width: 70px;
+            height: 70px;
+            background: red;
+            transform: rotate(-45deg);
+            border-radius: 50% 50% 0 0;
+        }
+        
+        .balloon.heart::before,
+        .balloon.heart::after {
+            content: "";
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: red;
+            border-radius: 50%;
+        }
+        
+        .balloon.heart::before {
+            top: -35px;
+            left: 0;
+        }
+        
+        .balloon.heart::after {
+            left: 35px;
+            top: 0;
+        }
+        
+        .balloon.star {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background: yellow;
+        }
+        
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            width: 2px;
+            height: 50px;
+            background: white;
+            transform: translateX(-50%);
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-120vh);
+                opacity: 0;
+            }
+        }
+        /* ==== CONFETTI ==== */
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            opacity: 0.9;
+            transform: rotate(0deg);
+            animation: fall 5s linear forwards;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate3d(1, 1, 0, 0deg);
+            }
+            100% {
+                transform: translateY(110vh) rotate3d(1, 1, 0, 720deg);
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Chữ chính giữa -->
-    <div class="center-text">
-        <h1>🎉 Chúc mừng sinh nhật Thùy 🎂</h1>
-        <h2>09/09/2004 ✨</h2>
-    </div>
-
-    <!-- Canvas pháo hoa -->
+    <h1>🎂 Chúc mừng sinh nhật Thùy 🎂</h1>
+    <h2>09/09/2004 ✨🎉</h2>
     <canvas id="fireworks"></canvas>
 
+    <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-celebration.mp3" type="audio/mpeg">
+  </audio>
+
     <script>
-        // ===== Confetti =====
-        function createConfetti() {
-            const confetti = document.createElement("div");
-            confetti.classList.add("confetti");
-            document.body.appendChild(confetti);
-
-            confetti.style.left = Math.random() * window.innerWidth + "px";
-            confetti.style.backgroundColor = `hsl(${Math.random() * 360},100%,50%)`;
-            confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
-
-            setTimeout(() => confetti.remove(), 5000);
-        }
-        setInterval(createConfetti, 150);
-
-        // ===== Balloons =====
+        /* ==== BÓNG BAY ==== */
         function createBalloon() {
             const balloon = document.createElement("div");
-            balloon.classList.add("balloon");
+            const types = ["balloon", "balloon heart", "balloon star"];
+            balloon.className = types[Math.floor(Math.random() * types.length)];
+            balloon.style.left = Math.random() * 100 + "vw";
+            balloon.style.background = `radial-gradient(circle at 30% 30%, #fff, hsl(${Math.random()*360}, 80%, 60%))`;
+            balloon.style.animationDuration = (6 + Math.random() * 6) + "s";
             document.body.appendChild(balloon);
-
-            balloon.style.left = Math.random() * window.innerWidth + "px";
-            balloon.style.bottom = "-60px";
-            balloon.style.backgroundColor = `hsl(${Math.random() * 360},70%,60%)`;
-            balloon.style.animationDuration = (Math.random() * 5 + 3) + "s";
-
-            balloon.animate([{
-                transform: "translateY(0)"
-            }, {
-                transform: `translateY(-${window.innerHeight + 100}px)`
-            }], {
-                duration: Math.random() * 5000 + 5000,
-                easing: "ease-out",
-                iterations: 1
-            }).onfinish = () => balloon.remove();
+            setTimeout(() => balloon.remove(), 14000);
         }
-        setInterval(createBalloon, 1200);
+        setInterval(createBalloon, 700);
 
-        // ===== Fireworks =====
-        const canvas = document.getElementById("fireworks");
-        const ctx = canvas.getContext("2d");
-        canvas.width = innerWidth;
-        canvas.height = innerHeight;
+        /* ==== CONFETTI ==== */
+        function createConfetti() {
+            const confetti = document.createElement("div");
+            confetti.className = "confetti";
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.background = `hsl(${Math.random()*360}, 100%, 50%)`;
+            confetti.style.animationDuration = (3 + Math.random() * 3) + "s";
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 6000);
+        }
+        setInterval(createConfetti, 200);
 
-        window.addEventListener("resize", () => {
-            canvas.width = innerWidth;
-            canvas.height = innerHeight;
-        });
+        /* ==== PHÁO HOA ==== */
+        const canvas = document.getElementById('fireworks');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Particle {
+            constructor(x, y, color, size = 2) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.radius = Math.random() * size + 1;
+                this.angle = Math.random() * 2 * Math.PI;
+                this.speed = Math.random() * 6 + 2;
+                this.life = 120;
+                this.alpha = 1;
+            }
+            update() {
+                this.x += Math.cos(this.angle) * this.speed;
+                this.y += Math.sin(this.angle) * this.speed;
+                this.speed *= 0.95;
+                this.life--;
+                this.alpha -= 0.008;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+        }
 
         let particles = [];
 
-        function createFirework(x, y) {
-            const count = 80;
-            for (let i = 0; i < count; i++) {
-                const angle = (i * Math.PI * 2) / count;
-                const speed = Math.random() * 5 + 2;
-                particles.push({
-                    x,
-                    y,
-                    vx: Math.cos(angle) * speed,
-                    vy: Math.sin(angle) * speed,
-                    alpha: 1,
-                    color: `hsl(${Math.random() * 360},100%,50%)`
-                });
+        function createFirework() {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height / 2;
+            const baseColor = `hsl(${Math.random()*360}, 100%, 60%)`;
+            for (let i = 0; i < 150; i++) {
+                particles.push(new Particle(x, y, baseColor, 3));
             }
         }
+        setInterval(createFirework, 1500);
 
         function animate() {
             ctx.fillStyle = "rgba(0,0,0,0.2)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
             particles.forEach((p, i) => {
-                p.x += p.vx;
-                p.y += p.vy;
-                p.alpha -= 0.01;
-
-                ctx.fillStyle = p.color;
-                ctx.globalAlpha = p.alpha;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-                ctx.fill();
-
-                if (p.alpha <= 0) particles.splice(i, 1);
+                p.update();
+                p.draw();
+                if (p.life <= 0) particles.splice(i, 1);
             });
-
             requestAnimationFrame(animate);
         }
         animate();
 
-        setInterval(() => {
-            createFirework(Math.random() * canvas.width, Math.random() * canvas.height / 2);
-        }, 2000);
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
     </script>
 </body>
 
